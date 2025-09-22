@@ -1,0 +1,103 @@
+/*white*/
+:root {
+  --background-color: #ffffff;
+  --slider-bg-color: #ccc;
+  --slider-circle-color: #ffffff;
+}
+
+/*black*/
+[data-theme="dark"] {
+  --background-color: #010101;
+  --slider-bg-color: #4d4d4d;
+  --slider-circle-color: #333333;
+}
+
+/*apply css variable*/
+body {
+  background-color: var(--background-color);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0, 3s color 0, 3s;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 16px;
+}
+
+/*theme switch styling*/
+.theme-switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 43px;
+  margin-top: 100px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--slider-bg-color);
+  transition: 0.4s;
+  border-radius: 34px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider::before {
+  position: absolute;
+  content: "❤️";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--slider-circle-color);
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 -1px 2px rgba(0, 0, 0, 0.1);
+}
+
+input:checked + .slider {
+  background-color: #0fbcf9;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/*icon*/
+.slider:after {
+  content: "❤️";
+  position: absolute;
+  left: 4px;
+  top: 46%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: 1;
+  transition: 0, 4s;
+}
+
+input:checked + .slider:after {
+  content: "💀";
+  left: 31px;
+  top: 16px;
+  opacity: 1;
+}
