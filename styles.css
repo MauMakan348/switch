@@ -35,7 +35,7 @@ h1 {
   display: inline-block;
   position: relative;
   width: 60px;
-  height: 43px;
+  height: 35px;
   margin-top: 100px;
 }
 
@@ -81,23 +81,7 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
-}
-
-/*icon*/
-.slider:after {
-  content: "❤️";
-  position: absolute;
-  left: 4px;
-  top: 46%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  opacity: 1;
-  transition: 0, 4s;
-}
-
-input:checked + .slider:after {
   content: "💀";
-  left: 31px;
-  top: 16px;
-  opacity: 1;
+  background-color: #333333;
+  color: #fff;
 }
